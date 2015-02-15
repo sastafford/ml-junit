@@ -1,4 +1,4 @@
-## What is ml-junit used for?
+## What is ml-junit?
 
 The ml-junit module is designed to simplify writing JUnit 4+ tests that run against a MarkLogic instance. A typical test 
 that uses ml-junit classes follows this pattern:
