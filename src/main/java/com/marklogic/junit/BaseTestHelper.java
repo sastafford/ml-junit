@@ -48,6 +48,22 @@ public class BaseTestHelper extends XmlHelper implements TestHelper {
         return resource;
     }
 
+    /**
+     * Convenience method for getting the permissions for a document as a fragment.
+     * 
+     * @param uri
+     * @param t
+     * @return
+     */
+    protected PermissionsFragment getDocumentPermissions(String uri, XccTemplate t) {
+        String xquery = format("for $perm in xdmp:document-get-permissions('%s') ", uri);
+        xquery += "return element {fn:node-name($perm)} {";
+        xquery += "  $perm/*,";
+        xquery += "  xdmp:eval('import module namespace sec=\"http://marklogic.com/xdmp/security\" at \"/MarkLogic/security.xqy\"; sec:get-role-names(' || $perm/sec:role-id/fn:string() || ')', (), ";
+        xquery += "    <options xmlns='xdmp:eval'><database>{xdmp:security-database()}</database></options>) }";
+        return new PermissionsFragment(parse("<permissions>" + t.executeAdhocQuery(xquery) + "</permissions>"));
+    }
+
     @Override
     public void setDatabaseClientProvider(DatabaseClientProvider provider) {
         this.clientProvider = provider;
