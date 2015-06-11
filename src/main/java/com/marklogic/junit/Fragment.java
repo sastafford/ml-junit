@@ -170,4 +170,8 @@ public class Fragment extends Assert {
     public Namespace[] getNamespaces() {
         return namespaces;
     }
+
+    public void setNamespaces(Namespace[] namespaces) {
+        this.namespaces = namespaces;
+    }
 }
