@@ -64,6 +64,17 @@ public class BaseTestHelper extends XmlHelper implements TestHelper {
         return new PermissionsFragment(parse("<permissions>" + t.executeAdhocQuery(xquery) + "</permissions>"));
     }
 
+    /**
+     * Convenience method for getting the properties for a document as a fragment.
+     * 
+     * @param uri
+     * @param t
+     * @return
+     */
+    protected Fragment getDocumentProperties(String uri, XccTemplate t) {
+        return new Fragment(t.executeAdhocQuery(format("xdmp:document-permissions('%s')", uri)));
+    }
+
     @Override
     public void setDatabaseClientProvider(DatabaseClientProvider provider) {
         this.clientProvider = provider;
