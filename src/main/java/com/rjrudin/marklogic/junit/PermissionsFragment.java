@@ -1,4 +1,4 @@
-package com.marklogic.junit;
+package com.rjrudin.marklogic.junit;
 
 public class PermissionsFragment extends Fragment {
 

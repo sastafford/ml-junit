@@ -1,4 +1,4 @@
-package com.marklogic.junit;
+package com.rjrudin.marklogic.junit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.custommonkey.xmlunit.DifferenceEngine;
 import org.custommonkey.xmlunit.DifferenceListener;
 import org.w3c.dom.Node;
 
-import com.marklogic.clientutil.LoggingObject;
+import com.rjrudin.marklogic.client.LoggingObject;
 
 public class CustomDifferenceListener extends LoggingObject implements DifferenceListener {
 

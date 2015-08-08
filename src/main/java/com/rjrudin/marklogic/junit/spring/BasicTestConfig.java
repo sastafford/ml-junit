@@ -1,10 +1,10 @@
-package com.marklogic.junit.spring;
+package com.rjrudin.marklogic.junit.spring;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-import com.marklogic.clientutil.spring.BasicConfig;
+import com.rjrudin.marklogic.client.spring.BasicConfig;
 
 @Configuration
 @PropertySource({ "file:gradle.properties" })

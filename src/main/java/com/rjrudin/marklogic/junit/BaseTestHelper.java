@@ -1,10 +1,10 @@
-package com.marklogic.junit;
+package com.rjrudin.marklogic.junit;
 
 import com.marklogic.client.DatabaseClient;
 import com.marklogic.client.extensions.ResourceManager;
-import com.marklogic.clientutil.DatabaseClientProvider;
-import com.marklogic.clientutil.ResourceExtension;
-import com.marklogic.xccutil.template.XccTemplate;
+import com.rjrudin.marklogic.client.DatabaseClientProvider;
+import com.rjrudin.marklogic.client.ResourceExtension;
+import com.rjrudin.marklogic.xcc.XccTemplate;
 
 /**
  * Provides convenience methods for instantiating new TestHelper and ResourceManager implementations. Also extends

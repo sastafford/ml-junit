@@ -1,9 +1,9 @@
-package com.marklogic.junit;
+package com.rjrudin.marklogic.junit;
 
 import java.util.List;
 
 import com.marklogic.client.io.StringHandle;
-import com.marklogic.clientutil.ClientHelper;
+import com.rjrudin.marklogic.client.ClientHelper;
 
 /**
  * Intended to provide some common assertion methods that depend on calls to MarkLogic via the MarkLogic Java API - i.e.

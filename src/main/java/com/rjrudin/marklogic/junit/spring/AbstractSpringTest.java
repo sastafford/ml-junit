@@ -1,4 +1,4 @@
-package com.marklogic.junit.spring;
+package com.rjrudin.marklogic.junit.spring;
 
 import java.util.Map;
 
@@ -10,9 +10,9 @@ import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
-import com.marklogic.clientutil.DatabaseClientProvider;
-import com.marklogic.junit.BaseTestHelper;
-import com.marklogic.xccutil.template.XccTemplate;
+import com.rjrudin.marklogic.client.DatabaseClientProvider;
+import com.rjrudin.marklogic.junit.BaseTestHelper;
+import com.rjrudin.marklogic.xcc.XccTemplate;
 
 /**
  * Base class for tests that utilize Spring's support for JUnit. Extends BaseTestHelper so that all of the convenience

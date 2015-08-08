@@ -1,4 +1,4 @@
-package com.marklogic.junit.spring;
+package com.rjrudin.marklogic.junit.spring;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -11,7 +11,8 @@ import java.lang.annotation.Target;
 @Inherited
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ModulesPaths {
+public @interface ModulesPath {
 
-    ModulesPath[] paths();
+    String baseDir();
+    
 }

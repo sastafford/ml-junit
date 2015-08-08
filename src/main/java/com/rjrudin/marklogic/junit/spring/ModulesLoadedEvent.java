@@ -1,4 +1,4 @@
-package com.marklogic.junit.spring;
+package com.rjrudin.marklogic.junit.spring;
 
 import java.io.File;
 import java.util.Set;

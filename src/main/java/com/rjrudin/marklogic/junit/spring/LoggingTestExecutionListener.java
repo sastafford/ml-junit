@@ -1,4 +1,4 @@
-package com.marklogic.junit.spring;
+package com.rjrudin.marklogic.junit.spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

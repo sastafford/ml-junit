@@ -1,4 +1,4 @@
-package com.marklogic.junit.spring;
+package com.rjrudin.marklogic.junit.spring;
 
 import java.io.File;
 import java.util.Arrays;
@@ -12,9 +12,9 @@ import org.springframework.test.context.TestContext;
 import org.springframework.test.context.support.AbstractTestExecutionListener;
 
 import com.marklogic.client.DatabaseClient;
-import com.marklogic.clientutil.DatabaseClientProvider;
-import com.marklogic.clientutil.modulesloader.ModulesLoader;
-import com.marklogic.clientutil.modulesloader.impl.DefaultModulesLoader;
+import com.rjrudin.marklogic.client.DatabaseClientProvider;
+import com.rjrudin.marklogic.modulesloader.ModulesLoader;
+import com.rjrudin.marklogic.modulesloader.impl.DefaultModulesLoader;
 
 /**
  * Used to automatically load new/modified modules before a test runs.
