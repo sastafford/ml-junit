@@ -6,29 +6,24 @@ sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
 
 repositories {
-  mavenCentral()
-  maven {url "http://developer.marklogic.com/maven2/"}
-  maven {url "http://rjrudin.github.io/marklogic-java/releases"}
-  maven {url publishUrl}
+    mavenCentral()
+    maven {url "http://developer.marklogic.com/maven2/"}
+    maven {url "http://rjrudin.github.io/marklogic-java/releases"}
 }
 
 dependencies {
-  compile 'com.rjrudin:ml-javaclient-util:2.1'
-  compile 'jaxen:jaxen:1.1.6'
-  compile 'junit:junit:4+'
-  compile 'org.springframework:spring-test:4.1.5.RELEASE'
-  compile 'xmlunit:xmlunit:1.6'
+    compile 'com.rjrudin:ml-javaclient-util:2.1'
+    compile 'jaxen:jaxen:1.1.6'
+    compile 'junit:junit:4+'
+    compile 'org.springframework:spring-test:4.1.5.RELEASE'
+    compile 'xmlunit:xmlunit:1.6'
 }
 
 publishing {
-  publications {
-    mainJava(MavenPublication) {
-      from components.java
+    publications {
+        mainJava(MavenPublication) { from components.java }
     }
-  }
-  repositories {
-    maven {
-      url publishUrl
+    repositories {
+        maven { url publishUrl }
     }
-  }
 }
