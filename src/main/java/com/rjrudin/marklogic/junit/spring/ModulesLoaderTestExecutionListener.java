@@ -3,7 +3,6 @@ package com.rjrudin.marklogic.junit.spring;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -14,7 +13,6 @@ import org.springframework.test.context.support.AbstractTestExecutionListener;
 import com.marklogic.client.DatabaseClient;
 import com.rjrudin.marklogic.client.DatabaseClientProvider;
 import com.rjrudin.marklogic.modulesloader.ModulesLoader;
-import com.rjrudin.marklogic.modulesloader.impl.DefaultModulesLoader;
 
 /**
  * Used to automatically load new/modified modules before a test runs.
@@ -25,9 +23,9 @@ public class ModulesLoaderTestExecutionListener extends AbstractTestExecutionLis
     private final static Logger logger = LoggerFactory.getLogger(ModulesLoaderTestExecutionListener.class);
 
     /**
-     * This currently only runs once; the thought is that an application will have an a base test
-     * class that defines the module loaders for all subclasses. Could easily modify this to instead
-     * keep track of which directories it has loaded already.
+     * This currently only runs once; the thought is that an application will have an a base test class that defines the
+     * module loaders for all subclasses. Could easily modify this to instead keep track of which directories it has
+     * loaded already.
      */
     @Override
     public void beforeTestClass(TestContext testContext) throws Exception {
@@ -45,7 +43,7 @@ public class ModulesLoaderTestExecutionListener extends AbstractTestExecutionLis
             }
 
             if (pathList != null) {
-                ModulesLoader modulesLoader = buildModulesLoader(testContext);
+                ModulesLoader modulesLoader = getModulesLoader(testContext);
 
                 DatabaseClientProvider p = testContext.getApplicationContext().getBean(DatabaseClientProvider.class);
                 DatabaseClient client = p.getDatabaseClient();
@@ -66,19 +64,13 @@ public class ModulesLoaderTestExecutionListener extends AbstractTestExecutionLis
     }
 
     /**
-     * Will first check for a ModulesLoader in the Spring container.
+     * Assumes that a ModulesLoader is present in the Spring container; can be overridden in a subclass to build one in
+     * some other fashion
      * 
      * @param testContext
      * @return
      */
-    protected ModulesLoader buildModulesLoader(TestContext testContext) {
-        Map<String, DefaultModulesLoader> loaders = testContext.getApplicationContext().getBeansOfType(
-                DefaultModulesLoader.class);
-        if (loaders.size() == 1) {
-            String name = loaders.keySet().iterator().next();
-            logger.info("Found ModulesLoader with name " + name + ", will use that for loading modules");
-            return loaders.get(name);
-        }
-        return new DefaultModulesLoader();
+    protected ModulesLoader getModulesLoader(TestContext testContext) {
+        return testContext.getApplicationContext().getBean(ModulesLoader.class);
     }
 }
