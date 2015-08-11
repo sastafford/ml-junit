@@ -1,10 +1,14 @@
 package com.rjrudin.marklogic.junit.spring;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import com.rjrudin.marklogic.client.spring.BasicConfig;
+import com.rjrudin.marklogic.modulesloader.ModulesLoader;
+import com.rjrudin.marklogic.modulesloader.impl.DefaultModulesLoader;
+import com.rjrudin.marklogic.modulesloader.impl.XccAssetLoader;
 
 @Configuration
 @PropertySource({ "file:gradle.properties" })
@@ -20,6 +24,31 @@ public class BasicTestConfig extends BasicConfig {
 
     public Integer getMlTestRestPort() {
         return mlTestRestPort;
+    }
+
+    /**
+     * This is included by default so that ModulesLoaderTestExecutionListener can be used.
+     * 
+     * @return
+     */
+    @Bean
+    public ModulesLoader modulesLoader() {
+        return new DefaultModulesLoader(xccAssetLoader());
+    }
+
+    /**
+     * Makes some assumptions about how to connect via XCC to load modules - feel free to override in a subclass.
+     * 
+     * @return
+     */
+    @Bean
+    public XccAssetLoader xccAssetLoader() {
+        XccAssetLoader l = new XccAssetLoader();
+        l.setUsername(getMlUsername());
+        l.setPassword(getMlPassword());
+        l.setHost(getMlHost());
+        l.setPort(getRestPort());
+        return l;
     }
 
     @Override
