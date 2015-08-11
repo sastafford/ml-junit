@@ -15,11 +15,11 @@ ml-junit makes heavy use of [Spring's support for JUnit tests](http://docs.sprin
 ## Getting started with ml-junit
 
 The best way to get started with ml-junit is to setup the sample-project application in 
-the [marklogic-java repository](https://github.com/rjrudin/marklogic-java) (clone that repository, then cd into sample-project and run "gradle mlDeploy") and 
+the ml-gradle repository](https://github.com/rjrudin/ml-gradle) (clone that repository, then cd into sample-project and run "gradle mlDeploy") and 
 then examine and run the tests in that project. Start 
-with [AbstractSampleProjectTest](https://github.com/rjrudin/marklogic-java/blob/master/sample-project/src/test/java/sample/AbstractSampleProjectTest.java) to see how to create in your 
+with [AbstractSampleProjectTest](https://github.com/rjrudin/ml-gradle/blob/master/sample-project/src/test/java/sample/AbstractSampleProjectTest.java) to see how to create in your 
 project a base test class that extends the ml-junit infrastructure. Then read through each of the tests 
-to see different ml-junit features in action - [WriteAndReadDocumentTest](https://github.com/rjrudin/marklogic-java/blob/master/sample-project/src/test/java/sample/WriteAndReadDocumentTest.java) is a good one to start with. 
+to see different ml-junit features in action - [WriteAndReadDocumentTest](https://github.com/rjrudin/ml-gradle/blob/master/sample-project/src/test/java/sample/WriteAndReadDocumentTest.java) is a good one to start with. 
 You can of course run the tests via "gradle test", or you can run "gradle eclipse" to setup Eclipse project 
 files and then run each test individually within Eclipse.
 
