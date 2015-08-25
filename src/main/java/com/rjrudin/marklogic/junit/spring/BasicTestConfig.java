@@ -47,7 +47,8 @@ public class BasicTestConfig extends BasicConfig {
         l.setUsername(getMlUsername());
         l.setPassword(getMlPassword());
         l.setHost(getMlHost());
-        l.setPort(getRestPort());
+        l.setPort(8000);
+        l.setDatabaseName(getMlAppName() + "-modules");
         return l;
     }
 
