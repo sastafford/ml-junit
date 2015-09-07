@@ -13,6 +13,7 @@ import org.springframework.test.context.support.AbstractTestExecutionListener;
 import com.marklogic.client.DatabaseClient;
 import com.rjrudin.marklogic.client.DatabaseClientProvider;
 import com.rjrudin.marklogic.modulesloader.ModulesLoader;
+import com.rjrudin.marklogic.modulesloader.impl.DefaultModulesFinder;
 
 /**
  * Used to automatically load new/modified modules before a test runs.
@@ -53,7 +54,8 @@ public class ModulesLoaderTestExecutionListener extends AbstractTestExecutionLis
                     if (logger.isInfoEnabled()) {
                         logger.info(String.format("Loading modules, using base directory of %s", baseDir));
                     }
-                    Set<File> loadedModules = modulesLoader.loadModules(new File(baseDir), client);
+                    Set<File> loadedModules = modulesLoader.loadModules(new File(baseDir), new DefaultModulesFinder(),
+                            client);
                     if (loadedModules != null) {
                         testContext.getApplicationContext().publishEvent(new ModulesLoadedEvent(loadedModules));
                     }
