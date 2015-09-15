@@ -7,6 +7,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Convenience annotation for specifying multiple paths from which to load MarkLogic modules into a modules database.
+ */
 @Documented
 @Inherited
 @Target(ElementType.TYPE)

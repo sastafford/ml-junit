@@ -18,6 +18,9 @@ import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Encapsulates an XML fragment with a variety of methods for assisting with XPath-based assertions in a JUnit test.
+ */
 public class Fragment extends Assert {
 
     protected final Logger logger = LoggerFactory.getLogger(getClass());

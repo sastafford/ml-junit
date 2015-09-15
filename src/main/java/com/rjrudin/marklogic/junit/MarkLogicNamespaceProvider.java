@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.jdom2.Namespace;
 
+/**
+ * Implementation of NamespaceProvider that registers a handful of commonly-used MarkLogic namespaces and prefixes.
+ */
 public class MarkLogicNamespaceProvider implements NamespaceProvider {
 
     @Override
@@ -22,7 +25,7 @@ public class MarkLogicNamespaceProvider implements NamespaceProvider {
         add(list, "sem", "http://marklogic.com/semantics");
         return list;
     }
-    
+
     private void add(List<Namespace> list, String prefix, String uri) {
         list.add(Namespace.getNamespace(prefix, uri));
     }

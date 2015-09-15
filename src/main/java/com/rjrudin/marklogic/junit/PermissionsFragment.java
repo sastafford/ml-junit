@@ -1,5 +1,8 @@
 package com.rjrudin.marklogic.junit;
 
+/**
+ * Extends Fragment to provide MarkLogic permission-specific methods for assertions.
+ */
 public class PermissionsFragment extends Fragment {
 
     public PermissionsFragment(Fragment other) {

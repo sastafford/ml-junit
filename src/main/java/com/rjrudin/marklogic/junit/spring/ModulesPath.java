@@ -7,6 +7,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Defines a base directory for MarkLogic modules to be loaded into a modules database when a test starts.
+ */
 @Documented
 @Inherited
 @Target(ElementType.TYPE)

@@ -10,6 +10,9 @@ import com.rjrudin.marklogic.modulesloader.ModulesLoader;
 import com.rjrudin.marklogic.modulesloader.impl.DefaultModulesLoader;
 import com.rjrudin.marklogic.modulesloader.impl.XccAssetLoader;
 
+/**
+ * Extends BasicConfig (from ml-javaclient-util) with test-specific properties.
+ */
 @Configuration
 @PropertySource({ "file:gradle.properties" })
 public class BasicTestConfig extends BasicConfig {

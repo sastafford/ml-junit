@@ -10,6 +10,9 @@ import org.w3c.dom.Node;
 
 import com.rjrudin.marklogic.client.LoggingObject;
 
+/**
+ * <code>DifferenceListener</code> implementation that captures all differences in a list which can then be retrieved.
+ */
 public class CustomDifferenceListener extends LoggingObject implements DifferenceListener {
 
     private List<Difference> differences = new ArrayList<Difference>();
