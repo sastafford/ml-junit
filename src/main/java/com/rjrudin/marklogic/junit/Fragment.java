@@ -28,6 +28,10 @@ public class Fragment extends Assert {
     private Namespace[] namespaces;
     private String uri;
 
+    public Fragment(Document doc) {
+    	this.internalDoc = doc;
+    }
+    
     public Fragment(String xml, Namespace... namespaces) {
         try {
             internalDoc = new SAXBuilder().build(new StringReader(xml));
