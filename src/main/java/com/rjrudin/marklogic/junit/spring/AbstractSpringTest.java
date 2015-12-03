@@ -39,7 +39,7 @@ public abstract class AbstractSpringTest extends BaseTestHelper implements Appli
      * Protected so a subclass can modify this to, e.g., not delete every document.
      */
     protected String getClearDatabaseXquery() {
-        return "xdmp:forest-clear(xdmp:database-forests(xdmp:database()))";
+        return "cts:uris((), (), cts:and-query(())) ! xdmp:document-delete(.)";
     }
 
     @Override
