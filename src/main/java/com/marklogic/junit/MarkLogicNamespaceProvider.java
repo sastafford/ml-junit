@@ -1,4 +1,4 @@
-package com.rjrudin.marklogic.junit;
+package com.marklogic.junit;
 
 import java.util.ArrayList;
 import java.util.List;

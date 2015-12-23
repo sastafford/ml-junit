@@ -1,4 +1,4 @@
-package com.rjrudin.marklogic.junit;
+package com.marklogic.junit;
 
 /**
  * Extends Fragment to provide MarkLogic permission-specific methods for assertions.

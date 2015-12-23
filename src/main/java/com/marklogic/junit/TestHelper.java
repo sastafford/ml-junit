@@ -1,7 +1,7 @@
-package com.rjrudin.marklogic.junit;
+package com.marklogic.junit;
 
-import com.rjrudin.marklogic.client.DatabaseClientProvider;
-import com.rjrudin.marklogic.xcc.XccTemplate;
+import com.marklogic.client.helper.DatabaseClientProvider;
+import com.marklogic.xcc.template.XccTemplate;
 
 /**
  * Interface for objects that help with writing tests.

@@ -1,4 +1,4 @@
-package com.rjrudin.marklogic.junit;
+package com.marklogic.junit;
 
 import org.jdom2.Namespace;
 
