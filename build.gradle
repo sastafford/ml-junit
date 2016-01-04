@@ -11,10 +11,11 @@ targetCompatibility = "1.7"
 
 repositories {
   jcenter()
+  maven {url "http://developer.marklogic.com/maven2/"}
 }
 
 dependencies {
-  compile 'com.marklogic:ml-javaclient-util:2.4'
+  compile 'com.marklogic:ml-javaclient-util:2.5'
   compile 'jaxen:jaxen:1.1.6'
   compile 'junit:junit:4+'
   compile 'org.springframework:spring-test:4.1.5.RELEASE'
@@ -56,7 +57,7 @@ if (project.hasProperty("myBintrayUser")) {
       licenses = ['Apache-2.0']
       vcsUrl = 'https://github.com/rjrudin/' + project.name + '.git'
       version {
-        name = "2.4"
+        name = "2.5"
         released = new Date()
       }
     }
