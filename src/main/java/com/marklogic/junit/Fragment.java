@@ -128,6 +128,12 @@ public class Fragment extends Assert {
         }
     }
 
+    public void assertElementCount(String message, String xpath, int count) {
+        String xpathToTest = xpath + "[%d]";
+        assertElementExists(message, format(xpathToTest, count));
+        assertElementMissing(message, format(xpathToTest, count + 1));
+    }
+    
     private void assertElementListHasOneElement(String message, List<Element> list, String xpath) {
         int size = list.size();
         assertTrue(message + ";\nExpected 1 element, but found " + size + "; xpath: " + xpath, size == 1);
