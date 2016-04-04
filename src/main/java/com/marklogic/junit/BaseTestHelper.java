@@ -72,7 +72,7 @@ public class BaseTestHelper extends XmlHelper implements TestHelper {
      * @return
      */
     protected Fragment getDocumentProperties(String uri, XccTemplate t) {
-        return new Fragment(t.executeAdhocQuery(format("xdmp:document-permissions('%s')", uri)));
+        return new Fragment(t.executeAdhocQuery(format("xdmp:document-properties('%s')", uri)));
     }
 
     @Override
