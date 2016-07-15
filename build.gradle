@@ -27,6 +27,7 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 }
 
 javadoc.destinationDir = file(javadocsDir + "/" + project.name)
+javadoc.failOnError = false
 
 publishing {
   publications {
@@ -36,11 +37,6 @@ publishing {
     sourcesJava(MavenPublication) {
       from components.java
       artifact sourcesJar
-    }
-  }
-  repositories {
-    maven {
-      url publishUrl
     }
   }
 }
