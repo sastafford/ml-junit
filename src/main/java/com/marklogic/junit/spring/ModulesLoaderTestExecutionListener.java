@@ -11,9 +11,9 @@ import org.springframework.test.context.TestContext;
 import org.springframework.test.context.support.AbstractTestExecutionListener;
 
 import com.marklogic.client.DatabaseClient;
-import com.marklogic.client.helper.DatabaseClientProvider;
-import com.marklogic.client.modulesloader.ModulesLoader;
-import com.marklogic.client.modulesloader.impl.DefaultModulesFinder;
+import com.marklogic.client.ext.helper.DatabaseClientProvider;
+import com.marklogic.client.ext.modulesloader.ModulesLoader;
+import com.marklogic.client.ext.modulesloader.impl.DefaultModulesFinder;
 
 /**
  * Used to automatically load new/modified modules before a test runs.

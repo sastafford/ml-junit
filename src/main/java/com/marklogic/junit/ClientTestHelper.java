@@ -2,7 +2,7 @@ package com.marklogic.junit;
 
 import java.util.List;
 
-import com.marklogic.client.helper.ClientHelper;
+import com.marklogic.client.ext.helper.ClientHelper;
 import com.marklogic.client.io.StringHandle;
 
 /**

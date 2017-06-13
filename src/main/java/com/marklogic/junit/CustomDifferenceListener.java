@@ -8,7 +8,7 @@ import org.custommonkey.xmlunit.DifferenceEngine;
 import org.custommonkey.xmlunit.DifferenceListener;
 import org.w3c.dom.Node;
 
-import com.marklogic.client.helper.LoggingObject;
+import com.marklogic.client.ext.helper.LoggingObject;
 
 /**
  * <code>DifferenceListener</code> implementation that captures all differences in a list which can then be retrieved.
