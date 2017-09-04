@@ -1,6 +1,6 @@
 package com.marklogic.junit;
 
-import com.marklogic.client.helper.DatabaseClientProvider;
+import com.marklogic.client.ext.helper.DatabaseClientProvider;
 import com.marklogic.xcc.template.XccTemplate;
 
 /**

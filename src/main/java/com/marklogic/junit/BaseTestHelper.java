@@ -2,8 +2,8 @@ package com.marklogic.junit;
 
 import com.marklogic.client.DatabaseClient;
 import com.marklogic.client.extensions.ResourceManager;
-import com.marklogic.client.helper.DatabaseClientProvider;
-import com.marklogic.client.helper.ResourceExtension;
+import com.marklogic.client.ext.helper.DatabaseClientProvider;
+import com.marklogic.client.ext.helper.ResourceExtension;
 import com.marklogic.xcc.template.XccTemplate;
 
 /**
