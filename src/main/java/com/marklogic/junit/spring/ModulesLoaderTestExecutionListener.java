@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.Resource;
 import org.springframework.test.context.TestContext;
 import org.springframework.test.context.support.AbstractTestExecutionListener;
 
@@ -54,7 +55,7 @@ public class ModulesLoaderTestExecutionListener extends AbstractTestExecutionLis
                     if (logger.isInfoEnabled()) {
                         logger.info(String.format("Loading modules, using base directory of %s", baseDir));
                     }
-                    Set<File> loadedModules = modulesLoader.loadModules(new File(baseDir), new DefaultModulesFinder(),
+                    Set<Resource> loadedModules = modulesLoader.loadModules(baseDir, new DefaultModulesFinder(),
                             client);
                     if (loadedModules != null) {
                         testContext.getApplicationContext().publishEvent(new ModulesLoadedEvent(loadedModules));
