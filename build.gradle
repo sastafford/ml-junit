@@ -1,3 +1,12 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath ("org.junit.platform:junit-platform-gradle-plugin:1.1.0-M1")
+  }
+}
+
 plugins {
   id "java"
   id "maven-publish"
@@ -6,6 +15,8 @@ plugins {
   id "com.jfrog.bintray" version "1.5"
   id "com.github.jk1.dependency-license-report" version "0.3.11"
 }
+
+apply plugin: "org.junit.platform.gradle.plugin"
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
@@ -18,9 +29,19 @@ repositories {
 dependencies {
   compile 'com.marklogic:ml-javaclient-util:3.1.0'
   compile 'jaxen:jaxen:1.1.6'
-  compile 'junit:junit:4+'
+  compile "org.junit.jupiter:junit-jupiter-api:5.0.2"
   compile 'org.springframework:spring-test:4.1.5.RELEASE'
   compile 'xmlunit:xmlunit:1.6'
+
+  compile "org.slf4j:slf4j-api:1.7.25"
+  compile "org.slf4j:slf4j-simple:1.7.25"
+
+  testRuntime(
+    'org.junit.jupiter:junit-jupiter-engine:5.0.2',
+    'org.junit.vintage:junit-vintage-engine:4.12.1',
+    'org.junit.platform:junit-platform-launcher:1.0.1',
+    'org.junit.platform:junit-platform-runner:1.0.1'
+  )
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
